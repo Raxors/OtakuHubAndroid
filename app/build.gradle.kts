@@ -66,16 +66,23 @@ dependencies {
 
     // Ktor
     implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.serialization)
     implementation(libs.ktor.client.cio)
-    implementation(libs.ktor.server.content.negotiation)
+    implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.serialization.kotlinx.json)
     implementation(libs.ktor.client.auth)
     implementation(libs.ktor.client.logging)
+    implementation(libs.ktor.client.json)
+    implementation(libs.slf4j.api)
+    implementation(libs.slf4j.android)
 
     // Koin
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.core)
     implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+    implementation(libs.koin.ktor)
+    implementation(libs.koin.logger.slf4j)
 
     // Coil
     implementation(libs.coil.compose)

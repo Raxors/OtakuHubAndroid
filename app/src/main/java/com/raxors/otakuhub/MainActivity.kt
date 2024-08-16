@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.raxors.otakuhub.ui.navigation.RootNav
+import com.raxors.otakuhub.ui.screens.main.MainScreen
 import com.raxors.otakuhub.ui.theme.OtakuHubTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +22,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             OtakuHubTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    RootNav(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    OtakuHubTheme {
-        Greeting("Android")
     }
 }
