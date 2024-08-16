@@ -1,14 +1,22 @@
 [versions]
 agp = "8.7.0-alpha07"
-kotlin = "2.0.0"
-coreKtx = "1.10.1"
+kotlin = "2.0.10"
+coreKtx = "1.13.1"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-lifecycleRuntimeKtx = "2.6.1"
-activityCompose = "1.8.0"
-composeBom = "2024.04.01"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+kotlinxSerializationJson = "1.7.1"
+lifecycleRuntimeKtx = "2.8.4"
+activityCompose = "1.9.1"
+composeBom = "2024.06.00"
 uiTextGoogleFonts = "1.6.8"
+navigationCompose = "2.7.7"
+ktor = "2.3.12"
+koin-bom = "4.0.0-RC1"
+coil = "2.7.0"
+paging = "3.3.2"
+room = "2.6.1"
+ksp = "2.0.10-1.0.24"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -27,8 +35,42 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 
+# Compose Navigation
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+
+# Kotlin serialization
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+
+# Ktor
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+
+# Koin
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
+koin-core = { module = "io.insert-koin:koin-core" }
+koin-android = { module = "io.insert-koin:koin-android" }
+
+# Coil
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+
+# Room
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+
+# Paging 3
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
+androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "paging" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
